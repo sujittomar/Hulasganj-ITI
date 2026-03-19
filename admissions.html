@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admissions – Hulasganj Private ITI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .admission-content { padding: 6rem 2rem; background: var(--off); }
+    .admission-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; }
+    .adm-box { background: var(--white); border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow); margin-bottom: 2rem; }
+    .adm-box h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 1.2rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--off); }
+    .doc-list { list-style: none; padding: 0; }
+    .doc-list li { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.7rem 0; border-bottom: 1px solid var(--off); font-size: 0.9rem; color: var(--text); }
+    .doc-list li:last-child { border-bottom: none; }
+    .doc-list li::before { content: "📄"; flex-shrink: 0; }
+    .fee-table { width: 100%; border-collapse: collapse; }
+    .fee-table th { background: var(--blue); color: var(--white); padding: 0.8rem 1rem; text-align: left; font-size: 0.85rem; }
+    .fee-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--off); font-size: 0.88rem; color: var(--text); }
+    .fee-table tr:hover td { background: var(--off); }
+    .scholarship-box { background: linear-gradient(135deg, #e8f4fd, #eef8f0); border: 1px solid #b8dff7; border-radius: 16px; padding: 1.5rem; }
+    .scholarship-box h4 { color: var(--navy); margin-bottom: 0.8rem; }
+    .scholarship-box p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+    .apply-form { background: var(--white); border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow); position: sticky; top: 100px; }
+    .apply-form h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .apply-form .form-subtitle { color: var(--text-light); font-size: 0.88rem; margin-bottom: 1.5rem; }
+    .apply-form input, .apply-form select, .apply-form textarea { width: 100%; padding: 0.85rem 1rem; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); margin-bottom: 1rem; outline: none; transition: border-color 0.2s; background: var(--white); }
+    .apply-form input:focus, .apply-form select:focus { border-color: var(--blue); }
+    .apply-form button { width: 100%; font-size: 1rem; padding: 1rem; }
+    .imp-dates { list-style: none; padding: 0; }
+    .imp-dates li { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; border-bottom: 1px solid var(--off); font-size: 0.88rem; }
+    .imp-dates li:last-child { border-bottom: none; }
+    .imp-dates .date-val { background: var(--blue); color: var(--white); font-size: 0.78rem; font-weight: 700; padding: 0.25rem 0.8rem; border-radius: 20px; }
+    @media(max-width:900px){ .admission-grid { grid-template-columns: 1fr; } .apply-form { position: static; } }
+  </style>
+</head>
+<body>
+<div class="topbar"><span>📞 +91-98765-43210</span><span>✉ info@hulasganjiti.ac.in</span><span>⏰ Mon–Sat: 9:00 AM – 5:00 PM</span><span class="admission-badge">🎓 Admissions Open 2025–26</span></div>
+<nav class="navbar">
+  <div class="nav-brand"><div class="logo-icon">ITI</div><div><div class="brand-name">Hulasganj Private ITI</div><div class="brand-sub">Affiliated to NCVT · Gaya, Bihar</div></div></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="admissions.html" class="active">Admissions</a></li><li><a href="facilities.html">Facilities</a></li>
+    <li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="admissions.html" class="btn-apply">Apply Now</a>
+  <button class="hamburger" id="hamburger">☰</button>
+</nav>
+<div class="page-header">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Admissions</div>
+  <h1>Admissions 2025–26</h1>
+  <p>Apply now for the new academic session. Seats are limited — register early to secure your spot.</p>
+</div>
+<section class="admission-content">
+  <div class="container admission-grid">
+    <div>
+      <div class="adm-box">
+        <h3>📋 Eligibility Criteria</h3>
+        <ul class="doc-list">
+          <li style="border:none;padding-bottom:0.4rem">For 2-Year Trades (Electrician, Fitter, MMV): Passed Class 10th (Matric) from a recognized board</li>
+          <li style="border:none;padding-bottom:0.4rem">For 1-Year Trades (COPA, Welder): Passed Class 8th from a recognized school</li>
+          <li style="border:none;padding-bottom:0.4rem">Age: 14 years minimum at time of admission</li>
+          <li style="border:none;padding-bottom:0.4rem">No upper age limit for ITI admissions</li>
+          <li style="border:none">Bihar domicile preferred; all states welcome</li>
+        </ul>
+      </div>
+      <div class="adm-box">
+        <h3>📄 Required Documents</h3>
+        <ul class="doc-list">
+          <li>Class 8th / 10th Marksheet & Certificate</li>
+          <li>Transfer Certificate (TC) from last school</li>
+          <li>Caste Certificate (for SC/ST/OBC students)</li>
+          <li>Income Certificate (for scholarship applicants)</li>
+          <li>Aadhar Card (Student)</li>
+          <li>Parent/Guardian Aadhar Card</li>
+          <li>Bank Passbook (for scholarship/DBT)</li>
+          <li>3 recent Passport Size Photographs</li>
+          <li>Domicile Certificate (Bihar)</li>
+        </ul>
+      </div>
+      <div class="adm-box">
+        <h3>💰 Fee Structure 2025–26</h3>
+        <table class="fee-table">
+          <tr><th>Trade</th><th>Duration</th><th>Annual Fee</th></tr>
+          <tr><td>Electrician</td><td>2 Years</td><td>₹6,500/year</td></tr>
+          <tr><td>Fitter</td><td>2 Years</td><td>₹6,500/year</td></tr>
+          <tr><td>COPA</td><td>1 Year</td><td>₹5,500</td></tr>
+          <tr><td>Welder</td><td>1 Year</td><td>₹5,000</td></tr>
+          <tr><td>Mechanic Motor Vehicle</td><td>2 Years</td><td>₹7,000/year</td></tr>
+          <tr><td>Plumber</td><td>1 Year</td><td>₹4,500</td></tr>
+        </table>
+        <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.8rem;">* Fees are approximate and subject to revision. SC/ST students may be eligible for full fee waiver under government schemes.</p>
+      </div>
+      <div class="scholarship-box">
+        <h4>🎓 Scholarships & Fee Concessions</h4>
+        <p>Government scholarships are available for SC/ST/OBC and economically weaker section (EWS) students through the Bihar government's scholarship portal. Our office assists all eligible students in applying. Minority scholarships and NSP (National Scholarship Portal) forms are also available. Contact our office for details.</p>
+      </div>
+      <div class="adm-box" style="margin-top:2rem;">
+        <h3>📅 Important Dates 2025–26</h3>
+        <ul class="imp-dates">
+          <li><span>Form Distribution Begins</span><span class="date-val">May 1, 2025</span></li>
+          <li><span>Last Date to Submit Forms</span><span class="date-val">July 31, 2025</span></li>
+          <li><span>Merit List Publication</span><span class="date-val">Aug 10, 2025</span></li>
+          <li><span>Fee Payment Deadline</span><span class="date-val">Aug 20, 2025</span></li>
+          <li><span>Orientation & Classes Begin</span><span class="date-val">Sept 1, 2025</span></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="apply-form">
+        <h3>Apply Online</h3>
+        <p class="form-subtitle">Fill in your details and our admission team will contact you within 24 hours.</p>
+        <form onsubmit="handleAdmission(event)">
+          <input type="text" placeholder="Full Name *" required />
+          <input type="tel" placeholder="Mobile Number *" required />
+          <input type="text" placeholder="Father's Name *" required />
+          <input type="text" placeholder="District / Block *" required />
+          <select required>
+            <option value="">Select Trade *</option>
+            <option>Electrician</option><option>Fitter</option><option>COPA</option>
+            <option>Welder</option><option>Mechanic Motor Vehicle</option><option>Plumber</option>
+          </select>
+          <select>
+            <option value="">Highest Qualification</option>
+            <option>Class 8th Pass</option><option>Class 10th Pass</option>
+            <option>Class 12th Pass</option><option>Others</option>
+          </select>
+          <select>
+            <option value="">Category</option>
+            <option>General</option><option>OBC</option><option>SC</option><option>ST</option><option>EWS</option>
+          </select>
+          <textarea placeholder="Any query or message..." rows="3"></textarea>
+          <button type="submit" class="btn-primary">Submit Application</button>
+        </form>
+        <p style="font-size:0.78rem;color:var(--text-light);margin-top:1rem;text-align:center;">Or visit our office at Hulasganj, Gaya during working hours</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col brand-col"><div class="footer-logo"><div class="logo-icon">ITI</div><div><div class="brand-name">Hulasganj Private ITI</div><small>Gaya, Bihar</small></div></div><p>Empowering rural Bihar youth with quality technical education since 2005.</p><div class="affiliation">🏛 Affiliated to NCVT, New Delhi</div></div>
+      <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="courses.html">Courses</a><a href="admissions.html">Admissions</a><a href="facilities.html">Facilities</a><a href="contact.html">Contact Us</a></div>
+      <div class="footer-col"><h4>Trade Courses</h4><a href="courses.html">Electrician</a><a href="courses.html">Fitter</a><a href="courses.html">COPA</a><a href="courses.html">Welder</a><a href="courses.html">MMV</a><a href="courses.html">Plumber</a></div>
+      <div class="footer-col"><h4>Contact Info</h4><p>📍 Hulasganj, Gaya, Bihar – 824202</p><p>📞 +91-98765-43210</p><p>✉ info@hulasganjiti.ac.in</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Hulasganj Private ITI, Gaya, Bihar. All rights reserved.</p></div>
+  </div>
+</footer>
+<script src="script.js"></script>
+<script>
+function handleAdmission(e) {
+  e.preventDefault();
+  alert('✅ Your application has been submitted! Our team will call you within 24 hours.');
+  e.target.reset();
+}
+</script>
+</body>
+</html>
