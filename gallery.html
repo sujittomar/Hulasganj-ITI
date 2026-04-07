@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery – Hulasganj Private ITI</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery-section {
+      padding: 6rem 2rem;
+      background: var(--off);
+    }
+
+    .gallery-filter {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-btn {
+      padding: 0.55rem 1.4rem;
+      border-radius: 30px;
+      border: 2px solid var(--border);
+      background: var(--white);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      aspect-ratio: 1;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gal-ph {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .gal-ph small {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 31, 78, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.3s;
+      color: var(--white);
+      font-size: 2rem;
+    }
+
+    .gal-cats {
+      display: none;
+    }
+
+    .gal-cats.show {
+      display: flex;
+    }
+
+    @media(max-width:900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media(max-width:600px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar"><span>📞 +91-9708423890</span><span>✉ hulasganjitc@gmail.com</span><span>⏰ Mon–Sat: 9:00 AM –
+      5:00 PM</span><span class="admission-badge">🎓 Admissions Open 2025–26</span></div>
+
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <div class="logo-icon"><img
+          src="https://raw.githubusercontent.com/sujittomar/Hulasganj-ITI/main/Image_Hulasganj_ITI_Logo.jpeg" alt="" ,
+          height="50px" , width="600px">
+      </div>
+      <div>
+        <div class="brand-name">Hulasganj Private ITI</div>
+        <div class="brand-sub">Affiliated to NCVT </div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="dropdown">
+        <a href="#courses">Courses ▾</a>
+        <div class="dropdown-menu">
+          <a href="courses.html">Electrician</a>
+          <a href="courses.html">Fitter</a>
+        </div>
+      </li>
+      <li><a href="admissions.html">Admissions</a></li>
+      <li><a href="facilities.html">Facilities</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="logo-icon"><img src="https://raw.githubusercontent.com/sujittomar/Hulasganj-ITI/main/img_iti.jpg" alt=""
+        , height="50px" , width="800px">
+    </div>
+    <div class="logo-icon"><img src="https://raw.githubusercontent.com/sujittomar/Hulasganj-ITI/main/img_skillIndia.jpg"
+        alt="" , height="50px" , width="600px">
+    </div>
+    <a href="admissions.html" class="btn-apply">Apply Now</a>
+    <button class="hamburger" id="hamburger">☰</button>
+  </nav>
+
+
+  <div class="page-header">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Gallery</div>
+    <h1>Photo Gallery</h1>
+    <p>Glimpses of life at Hulasganj Private ITI — workshops, events, and celebrations</p>
+  </div>
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-filter">
+        <button class="filter-btn active" onclick="filter('all',this)">All Photos</button>
+        <button class="filter-btn" onclick="filter('workshop',this)">Workshops</button>
+        <button class="filter-btn" onclick="filter('events',this)">Events</button>
+        <button class="filter-btn" onclick="filter('sports',this)">Sports</button>
+        <button class="filter-btn" onclick="filter('campus',this)">Campus</button>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- workshops -->
+        <div class="gallery-item" data-cat="workshop">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#e8f0fe,#b8d0f8);">🔧<small>Fitter
+              Workshop</small></div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-cat="workshop">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#fff3cd,#ffeaa7);">⚡<small>Electrical Lab</small>
+          </div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-cat="workshop">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#e8f8f0,#b8f0d0);">💻<small>Computer Lab</small>
+          </div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-cat="workshop">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#fce8e8,#f8b8b8);">🔥<small>Welding Shop</small>
+          </div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-cat="workshop">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#f0e8fe,#d8b8f8);">🚗<small>MMV Workshop</small>
+          </div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-cat="workshop">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#e8f4fe,#c0d8f8);">🛠<small>Practical
+              Training</small></div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <!-- events -->
+        <div class="gallery-item" data-cat="events">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#fff0e8,#ffd0b0);">🎓<small>Convocation
+              2024</small></div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-cat="events">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#e8ffe8,#b8f8b8);">🇮🇳<small>Independence
+              Day</small></div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-cat="events">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#fff8e8,#ffe8a0);">🏆<small>Prize
+              Distribution</small></div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-cat="events">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#e8e8ff,#c0c0f8);">🎉<small>Annual Day
+              2023</small></div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <!-- sports -->
+        <div class="gallery-item" data-cat="sports">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#e8fff0,#a8f0c8);">🏏<small>Cricket
+              Tournament</small></div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-cat="sports">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#fff0f8,#f8c0e0);">⚽<small>Football Match</small>
+          </div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-cat="sports">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#f0ffe8,#d0f8a8);">🏃<small>Sports Day
+              2024</small></div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <!-- campus -->
+        <div class="gallery-item" data-cat="campus">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#e8f0ff,#c0d0f8);">🏫<small>College
+              Building</small></div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-cat="campus">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#f0fff0,#c8f8c8);">🌳<small>Campus Garden</small>
+          </div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+        <div class="gallery-item" data-cat="campus">
+          <div class="gal-ph" style="background:linear-gradient(135deg,#fff8f0,#f8e0c0);">📚<small>Library</small></div>
+          <div class="gallery-overlay">🔍</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <div class="footer-logo">
+            <div class="logo-icon">ITI</div>
+            <div>
+              <div class="brand-name">Hulasganj Private ITI</div><small>Krishna Nagar, Hulasganj Jehanabad</small>
+            </div>
+          </div>
+          <p>Empowering rural Bihar youth with quality technical education since 2005.</p>
+          <div class="affiliation">🏛 Affiliated to NCVT, New Delhi</div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a
+            href="courses.html">Courses</a><a href="admissions.html">Admissions</a><a
+            href="facilities.html">Facilities</a><a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Trade Courses</h4><a href="courses.html">Electrician</a><a href="courses.html">Fitter</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <p>📍 Krishna Nagar, Hulasganj, Jehanabad, Bihar – 804407</p>
+          <p>📞 +91-9708423890</p>
+          <p>✉ hulasganjitc@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Krishna Nagar, Hulasganj Private ITI, Krishna Nagar, Hulasganj, Jehanabad (Bihar). All rights
+          reserved.</p>
+        <p>Affiliated to NCVT, Ministry of Skill Development & Entrepreneurship, Govt. of India</p>
+        <p>Designed By Sujit Tomar</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    function filter(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        if (cat === 'all' || item.dataset.cat === cat) {
+          item.style.display = '';
+          item.style.animation = 'fadeIn 0.4s ease';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+    const style = document.createElement('style');
+    style.textContent = '@keyframes fadeIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}';
+    document.head.appendChild(style);
+  </script>
+</body>
+
+</html>
